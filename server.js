@@ -3,6 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 
+require('dotenv').config();
 require('./config/database');
 
 const daysRouter = require('./routes/api/days');
