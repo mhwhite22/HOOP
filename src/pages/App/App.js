@@ -6,12 +6,22 @@ import SignupPage from '../../pages/SignupPage/SignupPage';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 // import DayDetailPage from '../../pages/DayDetailPage/DayDetailPage';
 // import WeekDetailPage from '../../pages/WeekDetailPage/WeekDetailPage';
-
+import userService from '../../utils/userService';
 
 class App extends Component {
   state = {
     days: []
   }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  }
+
   render() {
     return(
       <div className="App">
