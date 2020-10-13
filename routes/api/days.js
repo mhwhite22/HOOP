@@ -4,6 +4,9 @@ const daysCtrl = require('../../controllers/api/days');
 
 router.use(require('../../config/auth'));
 
+router.get('/', daysCtrl.index);
+router.post('/', daysCtrl.create);
+
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {
     if (req.user) return next();
