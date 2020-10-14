@@ -2,10 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const daySchema = new Schema({
-    date: Date,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    date: {type: Date, unique: true },
     sleep: Number,
     breaks: Number,
     meals: Number,
+    score: Number,
     exercise: Number
 }, {
     timestamps: true
