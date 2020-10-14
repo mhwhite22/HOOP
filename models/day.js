@@ -10,6 +10,7 @@ const daySchema = new Schema({
     sleep: Number,
     breaks: Number,
     meals: Number,
+    score: Number,
     exercise: Number
 }, {
     timestamps: true

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Greeting from '../../components/Greeting/Greeting';
 import Banner from '../../components/Banner/Banner';
 
+
+
 const DayDetailPage = (props) => {
     return (
         <div className="DayDetailPage">

@@ -29,7 +29,6 @@ async function signup(req, res) {
   const user = new User(req.body);
   try {
     await user.save();
-    console.log('hitting')
     const token = createJWT(user);
     res.json({ token });
   } catch (err) {

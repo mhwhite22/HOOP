@@ -1,10 +1,12 @@
 import React from 'react';
 
 
-function Score(props) {
+const Score = (props) => {
     return (
         <div>
-            SCORE
+        {props.days.map(day =>
+            <h1>{Math.floor(day.score)}</h1>
+        )}
         </div>
     );
 }

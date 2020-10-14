@@ -20,14 +20,7 @@ class App extends Component {
     user: userService.getUser(),
     date: this.getCurrentDate()
   };
-}
-
-  // getInitialState() {
-  //   return {
-  //     days: [],
-  //     currentDate: this.getCurrentDate(),
-  //   }
-  // }
+  }
 
   handleAddDay = async newDayData => {
     const newDay = await daysAPI.create(newDayData);
@@ -36,6 +29,7 @@ class App extends Component {
     }),
     () => this.props.history.push('/user'));
   }
+
 
   getCurrentDate() {
     const today = new Date();
@@ -50,6 +44,12 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
+  }
+
+  /* LifeCycle Methods */
+  async componentDidMount() {
+    const days = await daysAPI.getAll();
+    this.setState({days});
   }
 
   render() {
@@ -79,11 +79,15 @@ class App extends Component {
           history={history}
           name={this.state.user.name}
           date={this.state.date}
+          days={this.state.days}
+          currentDate={this.getCurrentDate}
             />
           }/> 
           <Route exact path='/day' render={( {history} ) =>
           <DayDetailPage 
-          
+          name={this.state.user.name}
+          date={this.state.date}
+          days={this.state.days}
           />
           }/>
           <Route exact path='/week' render={( {history} ) =>
