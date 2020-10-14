@@ -6,7 +6,7 @@ const daySchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    date: Date,
+    date: {type: Date, unique: true },
     sleep: Number,
     breaks: Number,
     meals: Number,

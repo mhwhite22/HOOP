@@ -7,7 +7,7 @@ import Score from '../../components/Score/Score'
 
 
 const UserPage = (props) => {
-
+    
     return (
         <div className="UserPage">
         <Greeting name={props.name} />
