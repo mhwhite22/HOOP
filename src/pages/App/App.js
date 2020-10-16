@@ -92,7 +92,8 @@ class App extends Component {
           }/>
           <Route exact path='/week' render={( {history} ) =>
           <WeekDetailPage 
-          
+          date={this.state.date}
+          days={this.state.days}
           />
           }/>
           <Route exact path='/dataform' render={( {history} )=>

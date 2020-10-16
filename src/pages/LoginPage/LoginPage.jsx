@@ -24,7 +24,7 @@ class LoginPage extends Component {
       await userService.login(this.state);
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage
-      this.props.history.push('/');
+      this.props.history.push('/user');
     } catch (err) {
       // Do not alert in your projects,
       // show a modal or some UI instead
