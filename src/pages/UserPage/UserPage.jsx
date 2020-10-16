@@ -19,6 +19,8 @@ const UserPage = (props) => {
         <Link className='btn btn-default WeekDetailPage-link-margin' to='/week'>View This Week's Data</Link>
         <br></br>
         <Link className='btn btn-default AddData-link-margin' to='/dataform'>Add Data</Link>
+        <br></br>
+        <Link className='btn btn-default Logout-link-margin' to='' onClick={props.handleLogout}>LOG OUT</Link>
         </div>
     )
 }

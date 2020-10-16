@@ -30,6 +30,8 @@ class App extends Component {
     () => this.props.history.push('/user'));
   }
 
+  handleDeleteDay = async id =>{}
+
 
   getCurrentDate() {
     const today = new Date();
@@ -75,31 +77,45 @@ class App extends Component {
             />
           }/> 
           <Route exact path='/user' render={( {history }) =>
+          userService.getUser() ?
           <UserPage
           history={history}
           name={this.state.user.name}
           date={this.state.date}
           days={this.state.days}
           currentDate={this.getCurrentDate}
+          handleLogout={this.handleLogout}
             />
+            :
+            <Redirect to='/' />
           }/> 
           <Route exact path='/day' render={( {history} ) =>
+          userService.getUser() ?
           <DayDetailPage 
+          history={history}
           name={this.state.user.name}
           date={this.state.date}
           days={this.state.days}
           />
+          :
+          <Redirect to='/' />
           }/>
           <Route exact path='/week' render={( {history} ) =>
+          userService.getUser() ?
           <WeekDetailPage 
           date={this.state.date}
           days={this.state.days}
           />
+          :
+          <Redirect to='/'/>
           }/>
           <Route exact path='/dataform' render={( {history} )=>
+          userService.getUser() ?
           <DataFormPage 
           handleAddDay={this.handleAddDay}
           />
+          :
+          <Redirect to='/' />
           }/>
         </Switch>
       </div>
