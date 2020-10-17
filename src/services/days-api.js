@@ -12,3 +12,9 @@ export function create(day) {
         body: JSON.stringify(day)
     }).then(res => res.json());
 }
+
+export function deleteOne(id) {
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE'
+    }).then(res => res.json());
+}

@@ -23,7 +23,7 @@ class DataForm extends Component {
         try {
             await 
             this.props.handleAddDay(this.state.formData);
-            this.props.days.push();
+            //this.props.days.push();
         } catch (err) {
             console.log(err)
         }

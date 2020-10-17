@@ -30,7 +30,12 @@ class App extends Component {
     () => this.props.history.push('/user'));
   }
 
-  handleDeleteDay = async id =>{}
+  handleDeleteDay = async id => {
+    await daysAPI.deleteOne(id);
+    this.setState(state => ({
+      days: state.days.filter(d => d._id !== id)
+    }, console.log(this.state.days)), () => this.props.history.push('/'));
+  }
 
 
   getCurrentDate() {
@@ -96,6 +101,7 @@ class App extends Component {
           name={this.state.user.name}
           date={this.state.date}
           days={this.state.days}
+          handleDeleteDay={this.handleDeleteDay}
           />
           :
           <Redirect to='/' />
