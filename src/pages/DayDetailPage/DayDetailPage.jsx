@@ -26,7 +26,7 @@ const DayDetailPage = (props) => {
         <br></br>
         <Link className='btn btn-default UserPage-link-margin' to='/user'>Home</Link>
 
-        <Link className='btn btn-default UpdateDate-link-margin' to='/update'></Link>
+        <Link className='btn btn-default UpdateDate-link-margin' to={{ pathname: '/update', state: props.days.yesterdayId }}>Edit Data</Link>
 
         <Link className='btn btn-default Delete-link-margin' to='/user'onClick={() => props.handleDeleteDay(yesterdayId[0])}>Delete</Link>
         </div>

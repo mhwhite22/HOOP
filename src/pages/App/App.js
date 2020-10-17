@@ -8,6 +8,7 @@ import UserPage from '../../pages/UserPage/UserPage';
 import DayDetailPage from '../../pages/DayDetailPage/DayDetailPage';
 import WeekDetailPage from '../../pages/WeekDetailPage/WeekDetailPage';
 import DataFormPage from '../../pages/DataFormPage/DataFormPage';
+import UpdatePage from '../../pages/UpdatePage/UpdatePage';
 import userService from '../../utils/userService';
 import * as daysAPI from '../../services/days-api';
 
@@ -115,7 +116,7 @@ class App extends Component {
           :
           <Redirect to='/'/>
           }/>
-          <Route exact path='/dataform' render={( {history} )=>
+          <Route exact path='/dataform' render={( {history} ) =>
           userService.getUser() ?
           <DataFormPage 
           handleAddDay={this.handleAddDay}
@@ -123,6 +124,16 @@ class App extends Component {
           :
           <Redirect to='/' />
           }/>
+          <Route exact path='/update' render={( {location} )=>
+          userService.getUser() ?
+          <UpdatePage
+          handleUpdateDay={this.handleUpdateDay}
+          location={location}
+          days={this.state.days}
+          />
+          :
+          <Redirect to='/' />
+        } />
         </Switch>
       </div>
     )
