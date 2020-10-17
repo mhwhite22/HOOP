@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import Greeting from '../../components/Greeting/Greeting';

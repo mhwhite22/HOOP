@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, Nav, NavLink, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage';
 import SignupPage from '../../pages/SignupPage/SignupPage';
 import LoginPage from '../../pages/LoginPage/LoginPage';
@@ -35,7 +35,7 @@ class App extends Component {
     await daysAPI.deleteOne(id);
     this.setState(state => ({
       days: state.days.filter(d => d._id !== id)
-    }, console.log(this.state.days)), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/'));
   }
 
 

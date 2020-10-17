@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
 import Greeting from '../../components/Greeting/Greeting';
 import DayGraph from '../../components/DayGraph/DayGraph';
@@ -6,7 +6,7 @@ import DayGraph from '../../components/DayGraph/DayGraph';
 
 
 const DayDetailPage = (props) => {
-    const yesterdayId = props.days.map((day) =>{
+    let yesterdayId = props.days.map((day) => {
         let currentDate = new Date(day.date)
         currentDate = currentDate.toDateString()
         const yesterday = new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toDateString()
@@ -14,6 +14,16 @@ const DayDetailPage = (props) => {
             return day._id
         }
         })
+    yesterdayId = yesterdayId.filter(id => id !== undefined)
+    
+    let yesterdayObj = props.days.map((day) => {
+        if (day._id ===  yesterdayId[0]) {
+            return day
+        }
+    })
+    yesterdayObj = yesterdayObj.filter(day => day !== undefined)
+    console.log(yesterdayId)
+    console.log(yesterdayObj)
     return (
         <div className="DayDetailPage">
         <Greeting name={props.name}/>
@@ -26,9 +36,10 @@ const DayDetailPage = (props) => {
         <br></br>
         <Link className='btn btn-default UserPage-link-margin' to='/user'>Home</Link>
 
-        <Link className='btn btn-default UpdateDate-link-margin' to={{ pathname: '/update', state: props.days.yesterdayId }}>Edit Data</Link>
+        <Link className='btn btn-default UpdateDate-link-margin' to={{ pathname: '/update', state: {yesterdayObj} }}>Edit Data</Link>
 
-        <Link className='btn btn-default Delete-link-margin' to='/user'onClick={() => props.handleDeleteDay(yesterdayId[0])}>Delete</Link>
+        <Link className='btn btn-default Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId)}>Delete</Link>
+        {/* <Link className='btn btn-default Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId.filter(id => id !== undefined))}>Delete</Link> */}
         </div>
     )
 }

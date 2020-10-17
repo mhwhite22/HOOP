@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Greeting from '../../components/Greeting/Greeting';
 import WeekGraph from '../../components/WeekGraph/WeekGraph';

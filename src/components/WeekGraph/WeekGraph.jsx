@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Bar} from 'react-chartjs-2';
 
 
@@ -46,7 +46,8 @@ const WeekGraph = (props) => {
         // console.log(weekDayIdx[thisDay])
         const dayMatch = weekDayNames.indexOf(weekDayIdx[thisDay])
         // console.log(`this is dayMatch ${dayMatch}`)
-        weekScores[dayMatch] = Math.floor(day.score)
+        return weekScores[dayMatch] = Math.floor(day.score)
+        
 
     })
     // console.log(`this is weekDates: ${weekDates}`)

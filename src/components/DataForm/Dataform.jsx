@@ -1,5 +1,4 @@
-import React, { Link, Component } from 'react';
-import DatePicker from 'react-datepicker';
+import React, { Component } from 'react';
 import {getCurrentDate} from '../../utils/utilities';
 
 let today = getCurrentDate(); 

@@ -22,8 +22,8 @@ async function create(req, res) {
 }
 
 async function deleteOne(req, res) {                                                                                             
+    console.log('delete ctrl')
     const deletedDay = await Day.findByIdAndRemove(req.params.id);
-    console.log('delete')
     res.status(200).json(deletedDay);
 }
 
