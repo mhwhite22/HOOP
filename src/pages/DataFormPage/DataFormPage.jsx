@@ -9,8 +9,6 @@ class DataFormPage extends Component {
             
         }
     }
-    
-  
     render() {
       return (
         <div className='DataFormPage'>

@@ -21,7 +21,8 @@ const DayDetailPage = (props) => {
             return day
         }
     })
-    yesterdayObj = yesterdayObj.filter(day => day !== undefined)
+    yesterdayObj = (yesterdayObj.filter(day => day !== undefined))[0]
+    // yesterdayObj = yesterdayObj[0]
     console.log(yesterdayId)
     console.log(yesterdayObj)
     return (
