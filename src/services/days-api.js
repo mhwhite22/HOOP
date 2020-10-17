@@ -18,3 +18,11 @@ export function deleteOne(id) {
         method: 'DELETE'
     }).then(res => res.json());
 }
+
+export function update(day) {
+    return fetch(`${BASE_URL}/${day._id}`, {
+        method: 'PUT',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(day)
+    }).then(res => res.json());
+}

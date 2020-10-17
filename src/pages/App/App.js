@@ -38,6 +38,16 @@ class App extends Component {
     }), () => this.props.history.push('/'));
   }
 
+  handleUpdateDay = async updatedDayData => {
+    const updatedDay = await daysAPI.update(updatedDayData);
+    const newDaysArr = this.state.days.map(d =>
+      d._id === updatedDay._id ? updatedDay : d );
+    this.setState(
+      {days: newDaysArr},
+      () => this.props.history.push('/user')
+    );
+  }
+
 
   getCurrentDate() {
     const today = new Date();
@@ -110,6 +120,7 @@ class App extends Component {
           <Route exact path='/week' render={( {history} ) =>
           userService.getUser() ?
           <WeekDetailPage 
+          name={this.state.user.name}
           date={this.state.date}
           days={this.state.days}
           />

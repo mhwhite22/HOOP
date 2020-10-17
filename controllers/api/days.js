@@ -4,6 +4,7 @@ module.exports = {
     index,
     create,
     delete: deleteOne,
+    update
 };
 
 async function index(req, res) {
@@ -16,7 +17,7 @@ async function create(req, res) {
     const m = parseInt(req.body.meals)
     const e = parseInt(req.body.exercise)
     const b = parseInt(req.body.breaks)
-    req.body.score = (((s*8)+(b*10)+(m*20)+(e*2.5))/2.25)
+    req.body.score = (((s*8)+(b*10)+(m*20)+(e*2.1))/2.35)
     const day = await Day.create(req.body);
     res.status(201).json(day);
 }
@@ -27,3 +28,7 @@ async function deleteOne(req, res) {
     res.status(200).json(deletedDay);
 }
 
+async function update(req, res) {
+    const updatedDay = await Day.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json(updatedDay);
+}
