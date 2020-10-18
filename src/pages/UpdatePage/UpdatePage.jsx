@@ -26,7 +26,7 @@ class UpdatePage extends Component {
     render() {
       return (
         <div className="DataForm-container card">
-        <div className="Dataform">
+        <div className="DataForm">
             <h5>Update Yesterday's Data</h5>
             <div>
             <header className="header-footer">Add Today's Data</header>

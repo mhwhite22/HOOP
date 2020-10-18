@@ -40,7 +40,7 @@ class DataForm extends Component {
     render() {
         return (
             <div className="DataForm-container card">
-              <div className="Dataform">
+              <div className="DataForm">
             <header className="header-footer">Add Today's Data</header>
             <form ref={this.formRef} className="form-horizontal" onSubmit={this.handleSubmit} >
               <div className="form-group">

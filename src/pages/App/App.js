@@ -131,7 +131,7 @@ class App extends Component {
           :
           <Redirect to='/'/>
           }/>
-          <Route exact path='/dataform' render={( {history} ) =>
+          <Route exact path='/DataForm' render={( {history} ) =>
           userService.getUser() ?
           <DataFormPage 
           handleAddDay={this.handleAddDay}
