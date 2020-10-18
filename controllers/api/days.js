@@ -17,7 +17,7 @@ async function create(req, res) {
     const m = parseInt(req.body.meals)
     const e = parseInt(req.body.exercise)
     const b = parseInt(req.body.breaks)
-    req.body.score = (((s*8)+(b*10)+(m*20)+(e*2.1))/2.35)
+    req.body.score = (((s*8)+(b*10)+(m*20)+(e/60*25))/2.1)
     const day = await Day.create(req.body);
     res.status(201).json(day);
 }

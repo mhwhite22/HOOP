@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {getCurrentDate} from '../../utils/utilities';
+import styles from './DataForm.css';
 
 let today = getCurrentDate(); 
 
@@ -38,7 +39,8 @@ class DataForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="DataForm-container card">
+              <div className="Dataform">
             <header className="header-footer">Add Today's Data</header>
             <form ref={this.formRef} className="form-horizontal" onSubmit={this.handleSubmit} >
               <div className="form-group">
@@ -78,6 +80,7 @@ class DataForm extends Component {
                 </div>
               </div>
             </form>
+            </div>
           </div>
         )
     }

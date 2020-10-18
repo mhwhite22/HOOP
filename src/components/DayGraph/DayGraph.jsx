@@ -30,8 +30,8 @@ const DayGraph = (props) => {
       }
 
     return (
-        <div className="card">
-        <div className="chart-container">
+        <div className="chartCard card transparent">
+        <div className="chart">
         <Bar
             className="chart"
             data={state}

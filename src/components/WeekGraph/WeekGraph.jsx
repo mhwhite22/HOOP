@@ -1,6 +1,7 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
 import { formatDate } from '../../utils/utilities';
+import styles from './WeekGraph.css'
 
 
 
@@ -36,20 +37,6 @@ const WeekGraph = (props) => {
 
     })
 
-        
-        // props.days.map((day, i) => {
-        // let currDay = day.date.toString()
-        // currDay = currDay.slice(0,10)
-        // const currYear = currDay.slice(0,4).trim()
-        // const currMonth = currDay.slice(5,7).trim()
-        // const currDate = currDay.slice(8,11).trim()
-        // const currDateStr = new Date(currYear, (currMonth-1), currDate).toDateString()
-
-        // if (weekDates.includes(currDateStr)){
-        //     weekScores[i] = (Math.floor(day.score))
-        // }
-    //})
-    
 
     const state = {
         labels: weekDates,
@@ -65,8 +52,8 @@ const WeekGraph = (props) => {
       }
 
     return (
-        <div class="card Melon darken-1">
-        <div>
+        <div className="chartCard card transparent">
+        <div className="chart">
         <Bar
             data={state}
             options={{
