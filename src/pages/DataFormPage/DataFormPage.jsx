@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import DataForm from '../../components/DataForm/DataForm.jsx';
+import DataForm from '../../components/DataForm/DataForm';
 
 class DataFormPage extends Component {
     constructor(props) {
