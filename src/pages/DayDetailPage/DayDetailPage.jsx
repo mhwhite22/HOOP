@@ -2,7 +2,7 @@ import React  from 'react';
 import { Link } from 'react-router-dom';
 import Greeting from '../../components/Greeting/Greeting';
 import DayGraph from '../../components/DayGraph/DayGraph';
-
+import styles from './DayDetailPage.css'
 
 
 const DayDetailPage = (props) => {
@@ -22,9 +22,7 @@ const DayDetailPage = (props) => {
         }
     })
     yesterdayObj = (yesterdayObj.filter(day => day !== undefined))[0]
-    // yesterdayObj = yesterdayObj[0]
-    console.log(yesterdayId)
-    console.log(yesterdayObj)
+
     return (
         <div className="DayDetailPage">
         <Greeting name={props.name}/>
@@ -33,13 +31,13 @@ const DayDetailPage = (props) => {
         days={props.days}
         date={props.date}
             />
-        <Link className='btn btn-default WeekDetailPage-link-margin' to='/week'>View This Week's Data</Link>
+        <Link className='btn waves-efffect waves-light WeekDetailPage-link-margin' to='/week'>View This Week's Data</Link>
         <br></br>
-        <Link className='btn btn-default UserPage-link-margin' to='/user'>Home</Link>
+        <Link className='btn waves-efffect waves-light UserPage-link-margin' to='/user'>Home</Link>
 
-        <Link className='btn btn-default UpdateDate-link-margin' to={{ pathname: '/update', state: {yesterdayObj} }}>Edit Data</Link>
+        <Link className='btn waves-efffect waves-light UpdateDate-link-margin' to={{ pathname: '/update', state: {yesterdayObj} }}>Edit Data</Link>
 
-        <Link className='btn btn-default Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId)}>Delete</Link>
+        <Link className='btn waves-efffect waves-light Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId)}>Delete</Link>
         {/* <Link className='btn btn-default Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId.filter(id => id !== undefined))}>Delete</Link> */}
         </div>
     )

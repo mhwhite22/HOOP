@@ -1,5 +1,6 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
+import styles from './DayGraph.css'
 
 
 const DayGraph = (props) => {
@@ -29,14 +30,17 @@ const DayGraph = (props) => {
       }
 
     return (
-        <div>
+        <div className="card">
+        <div className="chart-container">
         <Bar
+            className="chart"
             data={state}
             options={{
                 title:{
                     display: true,
-                    text:'day data',
-                    fontSize: 20
+                    text:'',
+                    fontSize: 20,
+                    defaultFontFamily: "'Megrim', cursive",
                 },
                 legend: {
                     display: false,
@@ -45,6 +49,8 @@ const DayGraph = (props) => {
             }}
             />
         </div>
+        </div>
+
     )
 }
 

@@ -6,16 +6,6 @@ import { formatDate } from '../../utils/utilities';
 
 const WeekGraph = (props) => {
 
-    // function formatDate(D){
-    //     let currDay = D.toString()
-    //     currDay = currDay.slice(0,10)
-    //     const currYear = currDay.slice(0,4).trim()
-    //     const currMonth = currDay.slice(5,7).trim()
-    //     const currDate = currDay.slice(8,11).trim()
-    //     const currDateStr = new Date(currYear, (currMonth-1), currDate).toDateString()
-    //     return currDateStr
-    // }
-
     let weekDates = []
     let weekDayNames = []
     let weekScores = [0, 0, 0, 0, 0, 0, 0]
@@ -32,9 +22,7 @@ const WeekGraph = (props) => {
 
     while (acc < 7) {
         let yesterday = new Date(Date.now() - acc * 24 * 60 * 60 * 1000).toDateString()
-        // console.log(`this is yesterday: ${yesterday}`)
         const lookup = yesterday.slice(0,3).toString()
-        // console.log(`this is lookup: ${lookup}`)
         weekDayNames.push(weekDayIdx[lookup])
         weekDates.push(yesterday)
         acc++
@@ -42,18 +30,12 @@ const WeekGraph = (props) => {
 
     props.days.map((day, i) => {
         let thisDay = formatDate(day.date).slice(0,3).toString()
-        // console.log(`this is thisday ${thisDay}`)
-        // weekScores at the position in which thisDay holds in WeekDayNames
-        // console.log(weekDayIdx[thisDay])
         const dayMatch = weekDayNames.indexOf(weekDayIdx[thisDay])
-        // console.log(`this is dayMatch ${dayMatch}`)
         return weekScores[dayMatch] = Math.floor(day.score)
         
 
     })
-    // console.log(`this is weekDates: ${weekDates}`)
-    // console.log(`this is  weekdayNames: ${weekDayNames}`)
-    // console.log(`this is weekScores ${weekScores}`)
+
         
         // props.days.map((day, i) => {
         // let currDay = day.date.toString()
@@ -83,6 +65,7 @@ const WeekGraph = (props) => {
       }
 
     return (
+        <div class="card Melon darken-1">
         <div>
         <Bar
             data={state}
@@ -99,6 +82,7 @@ const WeekGraph = (props) => {
             }}
             />
         </div>
+    </div>
     )
 }
 

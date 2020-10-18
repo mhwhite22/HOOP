@@ -11,6 +11,7 @@ import DataFormPage from '../../pages/DataFormPage/DataFormPage';
 import UpdatePage from '../../pages/UpdatePage/UpdatePage';
 import userService from '../../utils/userService';
 import * as daysAPI from '../../services/days-api';
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 class App extends Component {
@@ -77,6 +78,9 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path='/' render={() =>
+          userService.getUser() ?
+          <Redirect to='/user'/>
+          :
           <HomePage  
           />
           }/>
