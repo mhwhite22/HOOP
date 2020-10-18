@@ -1,0 +1,13 @@
+.chart{
+    height: 40vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    max-width: 80%;
+    background-color: transparent;
+    opacity: 0.7;
+}
+
+.chartCard{
+    padding-left: 10vw;
+    background-color: transparent;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import Greeting from '../../components/Greeting/Greeting';
@@ -19,6 +19,8 @@ const UserPage = (props) => {
         <Link className='btn btn-default WeekDetailPage-link-margin' to='/week'>View This Week's Data</Link>
         <br></br>
         <Link className='btn btn-default AddData-link-margin' to='/dataform'>Add Data</Link>
+        <br></br>
+        <Link className='btn btn-default Logout-link-margin' to='' onClick={props.handleLogout}>LOG OUT</Link>
         </div>
     )
 }

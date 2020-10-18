@@ -1,31 +1,19 @@
 import React, { Component } from 'react';
-import {getCurrentDate} from '../../utils/utilities';
-import styles from './DataForm.css';
+import { Link } from 'react-router-dom';
+import { formatDate } from '../../utils/utilities';
+import styles from '../../components/DataForm/DataForm.css'
 
-let today = getCurrentDate(); 
-
-class DataForm extends Component {
+class UpdatePage extends Component {
     state = {
-        formData: { 
-            date: today,
-            sleep: '',
-            breaks: '',
-            meals: '',
-            exercise: '',
-        }   
+        invalidForm: false,
+        formData: this.props.location.state.yesterdayObj
     }
 
-    
     formRef = React.createRef();
 
-    handleSubmit = async (e) => {
+    handleSubmit = e => {
         e.preventDefault();
-        try {
-            await 
-            this.props.handleAddDay(this.state.formData);
-        } catch (err) {
-            console.log(err)
-        }
+        this.props.handleUpdateDay(this.state.formData);
     };
 
     handleChange = e => {
@@ -34,19 +22,19 @@ class DataForm extends Component {
           formData,
         });
       };
-
-
-
+    
     render() {
-        return (
-            <div className="DataForm-container card">
-              <div className="Dataform">
+      return (
+        <div className="DataForm-container card">
+        <div className="Dataform">
+            <h5>Update Yesterday's Data</h5>
+            <div>
             <header className="header-footer">Add Today's Data</header>
             <form ref={this.formRef} className="form-horizontal" onSubmit={this.handleSubmit} >
               <div className="form-group">
                 <p>Date</p>
                 <div className="col-sm-12">
-                  <input type="text" className="form-control" placeholder="date" value={this.state.formData.date} name="date" onChange={this.handleChange} />
+                  <input type="text" className="form-control" placeholder="date" value={formatDate(this.state.formData.date)} name="date" onChange={this.handleChange} />
                 </div>
               </div>
               <p>How many hours of sleep did you get?</p>
@@ -76,16 +64,17 @@ class DataForm extends Component {
               <div className="form-group">
                 <div className="col-sm-12 text-center">
                   <button className="btn btn-default">Submit</button>&nbsp;&nbsp; 
-                  {/* <Link to='/user'>Cancel</Link> */}
                 </div>
               </div>
             </form>
-            </div>
           </div>
-        )
+          </div>
+
+            <Link to='/day'>Back</Link>
+        </div>
+      );
     }
 }
 
-export default DataForm;
 
-
+export default UpdatePage;

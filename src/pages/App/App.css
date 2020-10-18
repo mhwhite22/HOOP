@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Megrim', cursive;
 }
 
 .App-logo {
@@ -32,3 +33,5 @@
     transform: rotate(360deg);
   }
 }
+
+
