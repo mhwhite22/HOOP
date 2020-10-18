@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getCurrentDate} from '../../utils/utilities';
-import styles from './DataForm.css';
+import styles from '../DataForm.css';
 
 let today = getCurrentDate(); 
 
