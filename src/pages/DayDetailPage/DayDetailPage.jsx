@@ -2,7 +2,7 @@ import React  from 'react';
 import { Link } from 'react-router-dom';
 import Greeting from '../../components/Greeting/Greeting';
 import DayGraph from '../../components/DayGraph/DayGraph';
-import styles from './DayDetailPage.css'
+
 
 
 const DayDetailPage = (props) => {
@@ -38,7 +38,6 @@ const DayDetailPage = (props) => {
         <Link className='btn waves-efffect waves-light UpdateDate-link-margin' to={{ pathname: '/update', state: {yesterdayObj} }}>Edit Data</Link>
 
         <Link className='btn waves-efffect waves-light Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId)}>Delete</Link>
-        {/* <Link className='btn btn-default Delete-link-margin' to='/user' onClick={() => props.handleDeleteDay(yesterdayId.filter(id => id !== undefined))}>Delete</Link> */}
         </div>
     )
 }

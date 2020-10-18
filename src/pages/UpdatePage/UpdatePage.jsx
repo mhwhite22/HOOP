@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../utils/utilities';
-
+import styles from '../../components/DataForm/DataForm.css'
 
 class UpdatePage extends Component {
     state = {
@@ -25,7 +25,8 @@ class UpdatePage extends Component {
     
     render() {
       return (
-        <div className='UpdatePage'>
+        <div className="DataForm-container card">
+        <div className="Dataform">
             <h5>Update Yesterday's Data</h5>
             <div>
             <header className="header-footer">Add Today's Data</header>
@@ -66,6 +67,7 @@ class UpdatePage extends Component {
                 </div>
               </div>
             </form>
+          </div>
           </div>
 
             <Link to='/day'>Back</Link>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from '../DataForm/DataForm.css'
 
 
 class UpdateForm extends Component {
