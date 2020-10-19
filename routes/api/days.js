@@ -4,7 +4,6 @@ const daysCtrl = require('../../controllers/api/days');
 
 router.use(require('../../config/auth'));
 
-router.get('/', daysCtrl.index);
 router.post('/', daysCtrl.create);
 router.delete('/:id', daysCtrl.delete);
 router.put('/:id', daysCtrl.update);

@@ -1,16 +1,11 @@
 const Day = require('../../models/day');
 
 module.exports = {
-    index,
     create,
     delete: deleteOne,
     update
 };
 
-async function index(req, res) {
-    const days = await Day.find({});
-    res.status(200).json(days);
-}
 
 async function create(req, res) {
     const s = parseInt(req.body.sleep)
