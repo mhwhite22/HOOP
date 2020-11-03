@@ -28,5 +28,6 @@ Wireframes => [Wireframes](https://lucid.app/lucidchart/35f19838-1094-44b0-8196-
 
 # Next Steps:
 Refactor the wellness score metrics.
+Create more graphs that track each metric over the course of a week.
 Write the bar graphs so that the bar graphs exist with very little background.
 Make each date or bar in the graph a link to that day's data.

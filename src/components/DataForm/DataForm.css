@@ -1,6 +1,7 @@
 .DataForm-container{
     height: 40vw;
-    max-width: 80%;
+    max-width: 100%;
+    max-height: 60%;
     padding-left: 5vw;
     padding-right: 5vw;
     max-width: 80%;
