@@ -38,7 +38,7 @@ class DataForm extends Component {
 
   render() {
     return (
-      <div className="DataForm-container card">
+      <div className="DataForm-container">
         <div className="DataForm">
           <header className="header-footer">Add Today's Data</header>
           <form

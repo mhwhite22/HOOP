@@ -1,6 +1,9 @@
 .DataFormPage{
+    padding-top: 10vh;
+    height: 50vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
